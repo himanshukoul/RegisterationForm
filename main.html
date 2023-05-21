@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registeration Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Asap+Condensed:wght@300;700&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="heading">Registeration Form</div>
+
+    <div class="form-details">
+      <form class="input-fields">
+        <label for="nameInput"
+          >Name<br />
+          <input
+            type="text"
+            placeholder="Enter your name"
+            class="input"
+            id="name" /></label
+        ><br />
+        <label for="rollInput"
+          >Roll Number<br />
+          <input
+            type="text"
+            placeholder="22BCE3321"
+            class="input"
+            id="roll"
+            pattern="[0-9]{2}[A-Za-z]{3}[0-9]{4}" /></label
+        ><br />
+        <label for="dobInput"
+          >Date of Birth <br />
+          <input type="date" min="1900-01-01" max="" class="input" id="dob" />
+          <script>
+            var maxDate = new Date().toISOString().split("T")[0];
+            document.getElementById("dob").max = maxDate;
+          </script> </label
+        ><br />
+        <label for="emailInput"
+          >Email ID <br />
+          <input
+            type="email"
+            placeholder="xyz@gmail.com"
+            class="input"
+            id="email" /></label
+        ><br />
+
+        <label for="phoneInput">
+          Phone no. <br />
+          <input
+            type="tel"
+            class="input"
+            id="tele"
+            placeholder="1023456789"
+            pattern="[1-9]{1}[0-9]{9}"
+            required
+          /> </label
+        ><br />
+        <label for="gender"
+          >Gender<br />
+          <input type="radio" class="inrad" name="gen" value="male" checked />
+          Male
+          <input type="radio" class="inrad" name="gen" value="female" /> Female
+          <input type="radio" class="inrad" name="gen" value="other" />
+          Other </label
+        ><br /><br />
+        <label for="college year">
+          College Year
+          <select id="cyr">
+            <option value="1st">1st year</option>
+            <option value="2nd">2nd year</option>
+            <option value="3rd">3rd year</option>
+          </select> </label
+        ><br /><br />
+        <label for="Domain"
+          >Interested Domain (Select max: 3)<br />
+          <input type="checkbox" class="inch" name="dom" value="ai/ml" />AI/ML
+          <input type="checkbox" class="inch" name="dom" value="appdev" />APP
+          DEV
+          <input type="checkbox" class="inch" name="dom" value="webdev" />WEB
+          DEV <input type="checkbox" class="inch" name="dom" value="mech" />MECH
+          <input
+            type="checkbox"
+            class="inch"
+            name="dom"
+            value="elec"
+          />ELECTRICAL
+          <input type="checkbox" class="inch" name="dom" value="cyber" />CYBER
+          SECURITY </label
+        ><br /><br />
+        <label for="rate"
+          >Rating For Sessions<br />
+          <input
+            type="range"
+            class="input"
+            id="rate"
+            min="0"
+            max="10"
+            oninput="document.getElementById('rr').innerHTML = this.value"
+          />
+
+          <label id="rr" class="input" value=""></label> </label
+        ><br /><br />
+        <label for="q1Input"
+          >Suggestions: <br />
+          <textarea
+            name="ans1"
+            placeholder="limit: 50 words"
+            cols="35"
+            rows="5"
+            class="input"
+            id="sugges"
+          ></textarea>
+        </label>
+        <button type="submit" class="button" id="submitBtn">SUBMIT</button>
+      </form>
+    </div>
+
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
